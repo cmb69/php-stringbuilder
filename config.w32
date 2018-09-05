@@ -1,0 +1,7 @@
+ARG_ENABLE('stringbuilder', 'stringbuilder support', 'no');
+
+if (PHP_STRINGBUILDER != 'no') {
+	AC_DEFINE('HAVE_STRINGBUILDER', 1, 'stringbuilder support enabled');
+
+	EXTENSION('stringbuilder', 'stringbuilder.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
